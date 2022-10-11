@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane prefHeight="300.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="blackjack.BlackjackController">
+   <center>
+      <BorderPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: rgba(187, 187, 187, 0.80); -fx-background-radius: 8;" BorderPane.alignment="CENTER">
+         <top>
+            <VBox alignment="CENTER" prefHeight="31.0" prefWidth="230.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Label text="Croupier" />
+                  <Label fx:id="valeurCroupier" text="Valeur main : 0" />
+               </children>
+            </VBox>
+         </top>
+         <center>
+            <GridPane style="-fx-background-color: rgba(229, 229, 229, 0.80);" BorderPane.alignment="CENTER">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <HBox fx:id="carteCroup" alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+               </children>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <BorderPane.margin>
+                  <Insets />
+               </BorderPane.margin>
+            </GridPane>
+         </center>
+         <BorderPane.margin>
+            <Insets bottom="5.0" />
+         </BorderPane.margin>
+      </BorderPane>
+   </center>
+   <top>
+      <VBox alignment="TOP_CENTER" prefHeight="79.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label alignment="CENTER" contentDisplay="CENTER" style="-fx-background-color: rgba(106, 106, 106, 0.80); -fx-background-insets: -5; -fx-background-radius: 8;" text="Blackjack" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font size="21.0" />
+               </font>
+               <VBox.margin>
+                  <Insets top="10.0" />
+               </VBox.margin>
+            </Label>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+               <children>
+                <Button fx:id="butStart" mnemonicParsing="false" onAction="#actionCommencer" text="Commencer" />
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </top>
+   <left>
+      <VBox alignment="CENTER" prefHeight="521.0" prefWidth="261.0" style="-fx-background-color: rgba(106, 106, 106, 0.95); -fx-background-radius: 8;" BorderPane.alignment="CENTER">
+         <children>
+            <Label text="Joueur 1">
+               <font>
+                  <Font size="15.0" />
+               </font></Label>
+            <HBox alignment="CENTER" prefHeight="27.0" prefWidth="265.0">
+               <children>
+                  <Label fx:id="miseJ1" text="Mise : 0">
+                     <HBox.margin>
+                        <Insets right="20.0" />
+                     </HBox.margin>
+                  </Label>
+                  <Label fx:id="valeurJ1" text="Valeur main : 0">
+                     <HBox.margin>
+                        <Insets right="20.0" />
+                     </HBox.margin>
+                  </Label>
+                  <Label fx:id="argentJ1" text="Argent : 0" />
+               </children>
+            </HBox>
+            <GridPane prefHeight="106.0" prefWidth="285.0" style="-fx-background-color: rgba(181, 176, 181, 0.80);">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <HBox fx:id="carteJ1" alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+               </children>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </GridPane>
+            <ButtonBar prefHeight="33.0" prefWidth="265.0">
+              <buttons>
+                <Button fx:id="butMiseJ1" disable="true" mnemonicParsing="false" onAction="#fenetreMiser" text="Miser" />
+                  <Button fx:id="butTireJ1" disable="true" mnemonicParsing="false" onAction="#actionTirer" text="Tirer" />
+                  <Button fx:id="butPassJ1" disable="true" mnemonicParsing="false" onAction="#actionTerminer" text="Confirmer" />
+              </buttons>
+               <VBox.margin>
+                  <Insets right="20.0" />
+               </VBox.margin>
+            </ButtonBar>
+            <Button fx:id="butEndJ1" disable="true" mnemonicParsing="false" onAction="#actionEnd" text="Terminer" />
+         </children>
+         <BorderPane.margin>
+            <Insets bottom="5.0" left="5.0" />
+         </BorderPane.margin>
+      </VBox>
+   </left>
+   <right>
+      <VBox alignment="CENTER" prefHeight="521.0" prefWidth="261.0" style="-fx-background-radius: 8; -fx-background-color: rgba(106, 106, 106, 0.98);" BorderPane.alignment="CENTER">
+         <children>
+            <Label text="Joueur 2">
+               <font>
+                  <Font size="15.0" />
+               </font></Label>
+            <HBox alignment="CENTER" prefHeight="27.0" prefWidth="265.0">
+               <children>
+                  <Label fx:id="miseJ2" text="Mise : 0">
+                     <HBox.margin>
+                        <Insets right="20.0" />
+                     </HBox.margin>
+                  </Label>
+                  <Label fx:id="valeurJ2" text="Valeur main : 0">
+                     <HBox.margin>
+                        <Insets right="20.0" />
+                     </HBox.margin>
+                  </Label>
+                  <Label fx:id="argentJ2" text="Argent : 0" />
+               </children>
+            </HBox>
+            <GridPane prefHeight="106.0" prefWidth="285.0" style="-fx-background-color: rgba(181, 176, 181, 0.80);">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <HBox fx:id="carteJ2" alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+               </children>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </GridPane>
+            <ButtonBar prefHeight="31.0" prefWidth="265.0">
+               <buttons>
+                  <Button fx:id="butMiseJ2" disable="true" mnemonicParsing="false" onAction="#fenetreMiser" text="Miser" />
+                  <Button fx:id="butTireJ2" disable="true" mnemonicParsing="false" onAction="#actionTirer" text="Tirer" />
+                  <Button fx:id="butPassJ2" disable="true" mnemonicParsing="false" onAction="#actionTerminer" text="Confirmer" />
+               </buttons>
+               <VBox.margin>
+                  <Insets right="20.0" />
+               </VBox.margin>
+            </ButtonBar>
+            <Button fx:id="butEndJ2" disable="true" mnemonicParsing="false" onAction="#actionEnd" text="Terminer" />
+         </children>
+         <BorderPane.margin>
+            <Insets bottom="5.0" right="5.0" />
+         </BorderPane.margin>
+      </VBox>
+   </right>
+</BorderPane>
